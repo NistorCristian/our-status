@@ -584,14 +584,14 @@ body {
     padding-bottom: 12px;
     color: #fff;
     background: #0000FF no-repeat 50%;
-    background-size: cover
+    background-size: cover;
 }
 
 .site-header:before {
     bottom: 0;
     background: rgba(0,0,0,0.2);
 }
-`
+
 .site-header:after,
 .site-header:before {
     content: "";
@@ -1122,7 +1122,7 @@ body {
     }
 }
 
-.home-template .site-header:after {
+.home-template .site-header:after{
     display: none
 }
 
