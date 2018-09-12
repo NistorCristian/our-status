@@ -6,9 +6,14 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-<header class="site-header outer {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
+<div class="menu">
     <div class="inner">
         {{> "site-nav"}}
+    </div>
+</div>
+
+<header class="site-header outer {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
+    <div class="inner">
         <div class="site-header-content">
             <section class="post-full-meta">
                 <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
