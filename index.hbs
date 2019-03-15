@@ -1,11 +1,11 @@
 {{!< default}}
 
-<div class="intro">
+<div class="blog-intro">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-7 col-lg-5 ml-auto mr-auto text-center">
                 <h1>{{@site.title}}</h1>
-                <p>{{@site.description}}</p>
+                <p class="p-large">{{@site.description}}</p>
             </div>
         </div>
     </div>
@@ -15,15 +15,29 @@
 <main id="content" role="main">
     <div class="container">
         <div class="row">
-            <div class="col-md-10 ml-auto mr-auto">
-                <div class="loop">
+            <div class="col-xl-10 col-md-12 ml-auto mr-auto">
+                {{#is "home"}}
+                <div class="loop loop-first">
+                    {{#get "posts" include="tags,authors" limit="1"}}
+                        {{#foreach posts}}
+                            {{> "loop"}}
+                        {{/foreach}}
+                    {{/get}}
+                </div>
+                {{/is}}
+                <div class="loop loop-grid">
                     {{#foreach posts}}
-                        {{> "loop"}}
+                        {{#is "home"}}
+                            {{^if @first}}
+                                {{> "loop"}}
+                            {{/if}}
+                        {{else}}
+                            {{> "loop"}}
+                        {{/is}}
                     {{/foreach}}
                 </div>
+                {{pagination}}
             </div>
         </div>
     </div>
 </main>
-
-{{pagination}}

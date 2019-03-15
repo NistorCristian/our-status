@@ -6,13 +6,24 @@
         </a>
         {{/if}}
         <div class="inner">
+            {{#if primary_tag}}
+                <div class="tags"><a href="{{primary_tag.url}}">{{primary_tag.name}}</a></div>
+            {{/if}}
             <h2 class="post-title"><a href="{{url}}" title="{{title}}">{{title}}</a></h2> 
-            {{!-- <p>{{excerpt}}</p> --}}
+            <p>{{excerpt words="25"}}</p>
             <div class="post-meta">
+                <ul class="authors">
+                    {{#foreach authors}}
+                        <li>
+                            <a href="{{url}}" data-toggle="tooltip" data-placement="top" title="{{name}}">
+                                {{#if profile_image}}
+                                    <img src="{{img_url profile_image}}" alt="{{name}}" />
+                                {{/if}}
+                            </a>
+                        </li>
+                    {{/foreach}}
+                </ul>
                 <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
-                {{#if tags}}
-                    <div class="tags">{{tags limit=1}}</div>
-                {{/if}}
             </div>
         </div>
     </div>
