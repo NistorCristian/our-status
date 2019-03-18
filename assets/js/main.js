@@ -8,6 +8,9 @@ $(document).ready(function ($) {
         'content-api-key': '8a13e02a8917186f02014db742',
     };
 
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
+        h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
     if(window.location.origin == 'https://our-status.hauntedthemes.com'){
         config['content-api-host'] = 'https://our-status.hauntedthemes.com';
         config['content-api-key'] = 'c6717eab3d9a3e6be361980f66';
@@ -38,8 +41,9 @@ $(document).ready(function ($) {
 
     function setDemoImages(){
         if(window.location.origin == 'https://our-status.hauntedthemes.com'){
-            $('#content img, .blog-intro img').each(function (index, element) {
-                $(this).attr('src', $(this).attr('src').replace("http://localhost:2368", "https://our.status.im"));
+            $('#content img, #main img, .related-posts img, .blog-intro img').each(function (index, element) {
+                $(this).attr('src', "https://our.status.im" + $(this).attr('src'));
+                $(this).attr('src', $(this).attr('src').replace('https://our.status.imhttps://our.status.im', 'https://our.status.im'));
             });
         }else{
             $('img').each(function (index, element) {
@@ -59,14 +63,6 @@ $(document).ready(function ($) {
 
         setGalleryRation();
 
-        // var elem = document.querySelector('.loop-grid');
-        // msnry = new Masonry(elem, {
-        //     itemSelector: '.loop-grid .post',
-        //     // columnWidth: 340,
-        //     percentPosition: true,
-        //     gutter: 0,
-        //     transitionDuration: 0
-        // });
 
         var currentPage = 1;
         var pathname = window.location.pathname;
@@ -102,17 +98,9 @@ $(document).ready(function ($) {
                 $.get(nextPage, function (content) {
                     step++;
                     var post = $(content).find('.post');
-                    // post.addClass('invisible');
                     $('#content .loop-grid').append( post );
                     setDemoImages();
                     $('[data-toggle="tooltip"]').tooltip();
-                    // $.each(post, function(index, val) {
-                    //     var $this = $(this);
-                    //     $('#content .loop-grid').imagesLoaded( function() {
-                    //         msnry.appended( $this );
-                    //         $this.removeClass('invisible');
-                    //     });
-                    // });
                 });
 
             });
@@ -151,8 +139,27 @@ $(document).ready(function ($) {
         return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
     }
 
-    $(".share").stick_in_parent({
-        offset_top: 30
+    var checkIfSticky = 0;
+    if(w >= 992){
+        $(".share").stick_in_parent({
+            offset_top: 30
+        });
+        checkIfSticky = 1;
+    }
+
+    $(window).on('resize', function(event) {
+        w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        if (w < 992) {
+            $(".share").trigger("sticky_kit:detach");
+            checkIfSticky = 0;
+        }else{
+            if (checkIfSticky == 0) {
+                $(".share").stick_in_parent({
+                    offset_top: 30
+                });
+                checkIfSticky++;
+            }
+        };
     });
 
     // Set the right proportion for images inside the gallery

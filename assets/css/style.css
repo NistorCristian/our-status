@@ -468,7 +468,23 @@ blockquote {
   .related-posts {
     padding: 50px 0 30px; }
     .related-posts .post:last-child {
-      display: none; } }
+      display: none; }
+  .share {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+    border-top: 1px solid #EAECEF;
+    padding-top: 35px; }
+    .share ul {
+      align-items: flex-start;
+      flex-direction: row;
+      margin-left: 10px; }
+      .share ul li {
+        margin-right: 10px; } }
 
 @media screen and (max-width: 767px) {
   .post-content .editor-content h1,
