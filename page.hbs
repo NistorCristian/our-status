@@ -1,1 +1,50 @@
-page
+{{!< default}}
+
+{{#post}}
+
+<main id="main" role="main">
+    <article class="{{post_class}}">
+        <div class="post-intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-9 col-md-12 ml-auto mr-auto">
+                        <div class="inner">
+                            <h1 class="post-title">{{title}}</h1>
+                            <div class="post-meta">
+                                <ul class="authors">
+                                    {{#foreach authors}}
+                                        <li>
+                                            <a href="{{url}}">
+                                                <span>{{name}}</span>
+                                            </a>
+                                        </li>
+                                    {{/foreach}}
+                                </ul>
+                                {{#if primary_tag}}
+                                    <div class="tags">on {{tags limit="1"}}</div>
+                                {{/if}}
+                                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+                            </div>
+                            {{#if feature_image}}
+                                <img src="{{img_url feature_image size="l"}}" class="inner-featured-image" alt="{{title}}">
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="post-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-9 col-md-12 ml-auto mr-auto">
+                        <div class="editor-content">
+                            {{content}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</main>
+
+{{/post}}

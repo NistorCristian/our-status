@@ -24,6 +24,9 @@ pre {
   background: #000000;
   border-radius: 5px; }
 
+svg path {
+  transition: all .3s ease; }
+
 hr {
   margin: 50px 0; }
 
@@ -78,8 +81,7 @@ blockquote {
   padding: 0 40px;
   font-family: "Manrope", sans-serif;
   display: flex;
-  justify-content: space-between;
-  overflow: auto; }
+  justify-content: space-between; }
   .sub-header nav {
     white-space: nowrap; }
     .sub-header nav ul {
@@ -154,7 +156,8 @@ blockquote {
   margin: 90px 0 35px; }
   .post-intro .inner .post-meta {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    flex-wrap: wrap; }
     .post-intro .inner .post-meta time:before {
       content: ' - '; }
     .post-intro .inner .post-meta .tags a {
@@ -186,7 +189,8 @@ blockquote {
           color: #2D48BE; }
 
 .post-content {
-  margin-bottom: 70px; }
+  margin-bottom: 70px;
+  margin-top: 60px; }
   .post-content .editor-content {
     position: relative; }
     .post-content .editor-content h1, .post-content .editor-content h2, .post-content .editor-content h3, .post-content .editor-content h4 {
@@ -205,7 +209,8 @@ blockquote {
         color: #090909;
         margin-bottom: 10px; }
     .post-content .editor-content .share ul {
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      padding: 0; }
     .post-content .editor-content a {
       color: #4360DF;
       font-weight: 500;
@@ -279,6 +284,14 @@ blockquote {
   position: absolute;
   top: 0;
   margin-left: -100px; }
+  .share span {
+    font-family: "IBM Plex Mono", monospace;
+    line-height: 18px;
+    font-size: 14px;
+    letter-spacing: -0.186667px;
+    color: rgba(99, 102, 109, 0.8);
+    display: block;
+    margin-bottom: 10px; }
   .share ul {
     list-style-type: none;
     margin: 0;
@@ -290,10 +303,15 @@ blockquote {
       width: 40px;
       height: 40px;
       border: 1px solid #8d8d8d;
-      border-radius: 50%;
+      border-radius: 2px;
       display: flex;
       align-items: center;
       justify-content: center; }
+      .share ul a:hover {
+        border: 1px solid #000000; }
+        .share ul a:hover svg path {
+          fill: #000000;
+          opacity: 1; }
 
 .loop {
   display: flex;
@@ -417,7 +435,8 @@ blockquote {
 
 @media screen and (max-width: 1199px) {
   .sub-header {
-    padding: 0 25px 0 20px; }
+    padding: 0 25px 0 20px;
+    overflow: auto; }
     .sub-header nav ul li {
       margin-right: 0; }
       .sub-header nav ul li:last-child {
@@ -427,7 +446,13 @@ blockquote {
     .sub-header #search-form {
       display: none; }
   .blog-intro {
-    padding: 60px 0; } }
+    padding: 60px 0; }
+  .post-intro {
+    margin-top: 60px; }
+    .post-intro .inner img {
+      margin-top: 60px; }
+  iframe[src*="https://www.youtube.com/"] {
+    height: calc(690px / 1.77777778) !important; } }
 
 @media screen and (max-width: 991px) {
   .loop.loop-first .post .post-inner-content {
@@ -437,9 +462,33 @@ blockquote {
     .loop.loop-first .post .post-inner-content .inner {
       width: 100%; }
   .loop .post {
-    width: calc(50% - 30px); } }
+    width: calc(50% - 30px); }
+  .post-content {
+    margin-bottom: 30px; }
+  .related-posts {
+    padding: 50px 0 30px; }
+    .related-posts .post:last-child {
+      display: none; } }
 
 @media screen and (max-width: 767px) {
+  .post-content .editor-content h1,
+  .post-content .editor-content h2,
+  .post-content .editor-content h3,
+  .post-content .editor-content h4 {
+    margin-top: 50px; }
+  .post-content {
+    margin-top: 30px; }
+  .post-title {
+    line-height: 40px;
+    font-size: 32px; }
   .loop .post {
     width: 100%;
-    margin: 0 0 20px 0; } }
+    margin: 0 0 20px 0; }
+  iframe[src*="https://www.youtube.com/"] {
+    height: calc(500px / 1.77777778) !important; }
+  .related-posts h3 {
+    margin-left: 0; } }
+
+@media screen and (max-width: 575px) {
+  iframe[src*="https://www.youtube.com/"] {
+    height: calc((100vw - 40px) / 1.77777778) !important; } }

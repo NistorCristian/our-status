@@ -57,6 +57,12 @@ pre {
     border-radius: 5px;
 }
 
+svg{
+    path{
+        transition: all .3s ease;
+    }
+}
+
 hr{
     margin: 50px 0;
 }
@@ -120,7 +126,6 @@ blockquote{
     font-family: $manrope;
     display: flex;
     justify-content: space-between;
-    overflow: auto;
     nav{
         white-space: nowrap;
         ul{
@@ -218,6 +223,7 @@ blockquote{
         .post-meta{
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             time{
                 &:before{
                     content: ' - ';
@@ -275,6 +281,7 @@ blockquote{
 
 .post-content{
     margin-bottom: 70px;
+    margin-top: 60px;
     .editor-content{
         position: relative;
         h1,h2,h3,h4{
@@ -299,6 +306,7 @@ blockquote{
         .share{
             ul{
                 margin-bottom: 0;
+                padding: 0;
             }
         }
         a{
@@ -403,6 +411,15 @@ blockquote{
     position: absolute;
     top: 0;
     margin-left: -100px;
+    span{
+        font-family: $ibm-plex-mono;
+        line-height: 18px;
+        font-size: 14px;
+        letter-spacing: -0.186667px;
+        color: rgba(#63666D, 0.8);
+        display: block;
+        margin-bottom: 10px;
+    }
     ul{
         list-style-type: none;
         margin: 0;
@@ -414,10 +431,19 @@ blockquote{
             width: 40px;
             height: 40px;
             border: 1px solid #8d8d8d;
-            border-radius: 50%;
+            border-radius: 2px;
             display: flex;
             align-items: center;
             justify-content: center;
+            &:hover{
+                border: 1px solid $black;
+                svg{
+                    path{
+                        fill: $black;
+                        opacity: 1;
+                    }
+                }
+            }
         }
     }
 }
@@ -587,6 +613,7 @@ blockquote{
 @media screen and (max-width: 1199px) {
     .sub-header{
         padding: 0 25px 0 20px;
+        overflow: auto;
         nav{
             ul{
                 li{
@@ -606,6 +633,17 @@ blockquote{
     }
     .blog-intro {
         padding: 60px 0;
+    }
+    .post-intro{
+        margin-top: 60px;
+        .inner{
+            img{
+                margin-top: 60px;
+            }
+        }
+    }
+    iframe[src*="https://www.youtube.com/"] {
+        height: calc(690px / 1.77777778) !important;
     }
 }
 
@@ -628,13 +666,51 @@ blockquote{
             width: calc(50% - 30px);
         }
     }
+    .post-content{
+        margin-bottom: 30px;
+    }
+    .related-posts{
+        padding: 50px 0 30px;
+        .post{
+            &:last-child{
+                display: none;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 767px) {
+    .post-content .editor-content h1, 
+    .post-content .editor-content h2, 
+    .post-content .editor-content h3, 
+    .post-content .editor-content h4 {
+        margin-top: 50px;
+    }
+    .post-content{
+        margin-top: 30px;
+    }
+    .post-title{
+        line-height: 40px;
+        font-size: 32px;
+    }
     .loop{
         .post{
             width: 100%;
             margin: 0 0 20px 0;
         }
+    }
+    iframe[src*="https://www.youtube.com/"] {
+        height: calc(500px / 1.77777778) !important;
+    }
+    .related-posts{
+        h3{
+            margin-left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    iframe[src*="https://www.youtube.com/"] {
+        height: calc((100vw - 40px) / 1.77777778) !important;
     }
 }

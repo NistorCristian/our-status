@@ -8,6 +8,11 @@ $(document).ready(function ($) {
         'content-api-key': '8a13e02a8917186f02014db742',
     };
 
+    if(window.location.origin == 'https://our-status.hauntedthemes.com'){
+        config['content-api-host'] = 'https://our-status.hauntedthemes.com';
+        config['content-api-key'] = 'c6717eab3d9a3e6be361980f66';
+    }
+
     var ghostSearch = new GhostSearch({
         host: config['content-api-host'],
         key: config['content-api-key'],
@@ -32,9 +37,15 @@ $(document).ready(function ($) {
     });
 
     function setDemoImages(){
-        $('img').each(function (index, element) {
-            $(this).attr('src', $(this).attr('src').replace("http://localhost:2368", "https://our.status.im"));
-        });
+        if(window.location.origin == 'https://our-status.hauntedthemes.com'){
+            $('#content img, .blog-intro img').each(function (index, element) {
+                $(this).attr('src', $(this).attr('src').replace("http://localhost:2368", "https://our.status.im"));
+            });
+        }else{
+            $('img').each(function (index, element) {
+                $(this).attr('src', $(this).attr('src').replace("http://localhost:2368", "https://our.status.im"));
+            });
+        }
     }
 
     setGalleryRation();
@@ -141,7 +152,7 @@ $(document).ready(function ($) {
     }
 
     $(".share").stick_in_parent({
-        offset_top: 50
+        offset_top: 30
     });
 
     // Set the right proportion for images inside the gallery
