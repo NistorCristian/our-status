@@ -62,10 +62,13 @@ blockquote {
 .sub-header {
   border-top: 1px solid #EAECEF;
   border-bottom: 1px solid #EAECEF;
-  padding: 0 40px;
+  padding: 0 25px;
   font-family: "Manrope", sans-serif;
   display: flex;
   justify-content: space-between; }
+  .sub-header .contribute {
+    display: flex;
+    align-items: center; }
   .sub-header nav {
     white-space: nowrap; }
     .sub-header nav ul {
@@ -73,7 +76,8 @@ blockquote {
       margin: 0 0 0 -20px;
       padding: 0;
       width: 100%;
-      display: flex; }
+      display: flex;
+      justify-content: center; }
       .sub-header nav ul li {
         margin: 0 10px;
         display: flex; }
@@ -122,7 +126,8 @@ blockquote {
     width: 320px;
     border-radius: 4px;
     max-height: 70vh;
-    overflow: auto; }
+    overflow: auto;
+    text-align: left; }
     #search-form #search-results a {
       color: #000000;
       display: block;
@@ -417,17 +422,29 @@ blockquote {
 .home-template:not(.end-posts) .loop-grid .post:nth-last-child(-n+2) {
   display: none; }
 
+@media screen and (max-width: 1499px) {
+  .sub-header nav ul li {
+    margin: 0 5px;
+    display: flex; } }
+
 @media screen and (max-width: 1199px) {
   .sub-header {
     padding: 0 25px 0 20px;
     overflow: auto; }
-    .sub-header nav ul li {
-      margin-right: 0; }
-      .sub-header nav ul li:last-child {
-        margin-right: 15px; }
-      .sub-header nav ul li a {
-        padding: 10px; }
+    .sub-header nav {
+      width: 100%; }
+      .sub-header nav ul {
+        margin: 0; }
+        .sub-header nav ul li {
+          margin-right: 0; }
+          .sub-header nav ul li:last-child {
+            margin-right: 15px; }
+          .sub-header nav ul li a {
+            padding: 10px; }
     .sub-header #search-form {
+      display: none;
+      height: 46px; }
+    .sub-header .contribute {
       display: none; }
   .blog-intro {
     padding: 60px 0; }
@@ -487,7 +504,12 @@ blockquote {
   iframe[src*="https://www.youtube.com/"] {
     height: calc(500px / 1.77777778) !important; }
   .related-posts h3 {
-    margin-left: 0; } }
+    margin-left: 0; }
+  .sub-header nav ul {
+    justify-content: flex-start;
+    margin: 0 -15px; }
+    .sub-header nav ul li:last-child {
+      padding-right: 10px; } }
 
 @media screen and (max-width: 575px) {
   iframe[src*="https://www.youtube.com/"] {

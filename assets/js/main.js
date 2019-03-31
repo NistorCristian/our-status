@@ -5,7 +5,7 @@ $(document).ready(function ($) {
         'infinite-scroll': true,
         'infinite-scroll-step': 9999,
         'content-api-host': 'http://localhost:2368',
-        'content-api-key': '8a13e02a8917186f02014db742',
+        'content-api-key': '1bfefb2fd10a5cb7230c8f220b',
     };
 
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
