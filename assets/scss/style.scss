@@ -223,14 +223,19 @@ blockquote{
         h1{
             margin-bottom: 10px;
         }
-        img{
-            margin-top: 90px;
+        .inner-featured-image{
+            margin-top: 50px;
             max-width: 100%;
         }
         .authors{
             margin-right: 3px;
             li{
                 margin: 0;
+                &:nth-child(n+2){
+                    img{
+                        margin-left: -10px;
+                    }
+                }
                 &:last-child{
                     a{
                         span{
@@ -249,7 +254,6 @@ blockquote{
                     color: $purple;
                     text-transform: capitalize;
                     display: flex;
-                    margin-right: 3px;
                     span{
                         &:after{
                             content: ', ';
@@ -640,11 +644,6 @@ blockquote{
     }
     .post-intro{
         margin-top: 60px;
-        .inner{
-            img{
-                margin-top: 60px;
-            }
-        }
     }
     iframe[src*="https://www.youtube.com/"] {
         height: calc(690px / 1.77777778) !important;

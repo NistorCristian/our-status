@@ -153,13 +153,15 @@ blockquote {
       margin: 0 8px 0 0; }
   .post-intro .inner h1 {
     margin-bottom: 10px; }
-  .post-intro .inner img {
-    margin-top: 90px;
+  .post-intro .inner .inner-featured-image {
+    margin-top: 50px;
     max-width: 100%; }
   .post-intro .inner .authors {
     margin-right: 3px; }
     .post-intro .inner .authors li {
       margin: 0; }
+      .post-intro .inner .authors li:nth-child(n+2) img {
+        margin-left: -10px; }
       .post-intro .inner .authors li:last-child a span:after {
         display: none; }
       .post-intro .inner .authors li a {
@@ -170,8 +172,7 @@ blockquote {
         letter-spacing: -0.2px;
         color: #4360DF;
         text-transform: capitalize;
-        display: flex;
-        margin-right: 3px; }
+        display: flex; }
         .post-intro .inner .authors li a span:after {
           content: ', '; }
         .post-intro .inner .authors li a:hover {
@@ -450,8 +451,6 @@ blockquote {
     padding: 60px 0; }
   .post-intro {
     margin-top: 60px; }
-    .post-intro .inner img {
-      margin-top: 60px; }
   iframe[src*="https://www.youtube.com/"] {
     height: calc(690px / 1.77777778) !important; } }
 
