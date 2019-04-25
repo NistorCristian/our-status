@@ -5,7 +5,7 @@ $(document).ready(function ($) {
         'infinite-scroll': false,
         'infinite-scroll-step': 9999,
         'content-api-host': 'https://our.status.im',
-        'content-api-key': '',
+        'content-api-key': '10e7f8c1f793d2945ea1177076',
     };
 
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
