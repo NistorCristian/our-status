@@ -348,8 +348,7 @@ blockquote {
     .loop .post .inner {
       padding: 20px;
       display: flex;
-      flex-direction: column;
-      flex: 1; }
+      flex-direction: column; }
       .loop .post .inner p {
         margin-bottom: 50px; }
       .loop .post .inner h2 {
@@ -410,6 +409,14 @@ blockquote {
   align-items: center;
   justify-content: center;
   margin: 70px 0 100px; }
+  .pagination .pagination-links {
+    width: 100%; }
+    .pagination .pagination-links .row {
+      margin: 0; }
+  .pagination #load-posts {
+    display: none; }
+    .pagination #load-posts.active {
+      display: flex; }
   .pagination .end {
     opacity: .3;
     pointer-events: none; }
@@ -508,7 +515,9 @@ blockquote {
     justify-content: flex-start;
     margin: 0 -15px; }
     .sub-header nav ul li:last-child {
-      padding-right: 10px; } }
+      padding-right: 10px; }
+  .pagination .pagination-links .row {
+    margin: 0 -15px; } }
 
 @media screen and (max-width: 575px) {
   iframe[src*="https://www.youtube.com/"] {

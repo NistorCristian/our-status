@@ -40,6 +40,9 @@ $(document).ready(function ($) {
 
     $('[data-toggle="tooltip"]').tooltip();
 
+    $('#load-posts').addClass('active');
+    $('.pagination-links').addClass('d-none');
+
     $(window).on('load', function(event) {
 
         setGalleryRation();

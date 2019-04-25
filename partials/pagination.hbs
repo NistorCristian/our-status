@@ -1,3 +1,20 @@
 <div class="pagination">
     <button id="load-posts" class="btn" data-end="{{t "No more posts"}}" data-posts_per_page="{{@config.posts_per_page}}"><span>{{t "Load more posts"}}</span></button>
+    <div class="pagination-links">
+        <div class="row">
+            <div class="col-4 text-left">
+                {{#if prev}}
+                    <a class="newer-posts btn" href="{{page_url prev}}"><i class="fas fa-angle-left"></i>{{t "Newer Posts"}}</a>
+                {{/if}}
+            </div>
+            <div class="col-4 text-center d-flex align-items-center justify-content-center">
+                <span class="page-number">{{page}} {{t "of"}} {{pages}}</span>
+            </div>
+            <div class="col-4 text-right">
+                {{#if next}}
+                    <a class="older-posts btn" href="{{page_url next}}">{{t "Older Posts"}} <i class="fas fa-angle-right"></i></a>
+                {{/if}}
+            </div>
+        </div>
+    </div>
 </div>
