@@ -565,8 +565,9 @@ blockquote{
             z-index: 5;
             display: block;
             img{
-                max-width: 36px;
-                max-height: 36px;
+                width: 36px;
+                height: 36px;
+                object-fit: cover;
                 padding: 2px;
                 background: $white;
                 border-radius: 50%;
