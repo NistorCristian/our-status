@@ -388,8 +388,8 @@ blockquote {
     justify-content: center;
     margin-bottom: 20px; }
     .blog-intro .authors img {
-      max-width: 100px;
-      max-height: 100px; }
+      width: 100px;
+      height: 100px; }
 
 .authors {
   display: flex;
