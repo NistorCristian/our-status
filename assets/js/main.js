@@ -34,21 +34,7 @@ $(document).ready(function ($) {
         }
     });
 
-    function setDemoImages(){	
-        if(window.location.origin == 'https://our-status.hauntedthemes.com'){	
-            $('#content img, #main img, .related-posts img, .blog-intro img').each(function (index, element) {	
-                $(this).attr('src', "https://our.status.im" + $(this).attr('src'));	
-                $(this).attr('src', $(this).attr('src').replace('https://our.status.imhttps://our.status.im', 'https://our.status.im'));	
-            });	
-        }else{	
-            $('img').each(function (index, element) {	
-                $(this).attr('src', $(this).attr('src').replace("http://localhost:2368", "https://our.status.im"));	
-            });	
-        }	
-    }
-
     setGalleryRation();
-    setDemoImages();
 
     var msnry;
 
@@ -97,7 +83,6 @@ $(document).ready(function ($) {
                     step++;
                     var post = $(content).find('.post');
                     $('#content .loop-grid').append( post );
-                    setDemoImages();
                     $('[data-toggle="tooltip"]').tooltip();
                 });
 
