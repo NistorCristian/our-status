@@ -322,6 +322,8 @@ blockquote {
         flex-direction: column; }
       .loop.loop-first .post .post-inner-content img {
         max-height: 1000px; }
+      .loop.loop-first .post .post-inner-content .authors img {
+        height: 36px; }
   .loop .post {
     background: #FFFFFF;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
