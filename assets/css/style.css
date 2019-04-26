@@ -347,7 +347,8 @@ blockquote {
       object-fit: cover;
       max-height: 250px; }
     .loop .post .authors img {
-      max-height: 36px; }
+      width: 36px;
+      height: 36px; }
     .loop .post .inner {
       padding: 20px;
       display: flex;
