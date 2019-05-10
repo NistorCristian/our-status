@@ -27,20 +27,9 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-10 col-md-12 ml-auto mr-auto">
-                {{#is "home"}}
-                <div class="loop loop-first">
-                    {{#get "posts" include="tags,authors" limit="1"}}
-                        {{#foreach posts}}
-                            {{> "loop"}}
-                        {{/foreach}}
-                    {{/get}}
-                </div>
-                {{/is}}
                 <div class="loop loop-grid">
                     {{#foreach posts}}
-                        {{^if @first}}
-                            {{> "loop"}}
-                        {{/if}}
+                        {{> "loop"}}
                     {{/foreach}}
                 </div>
                 {{pagination}}
