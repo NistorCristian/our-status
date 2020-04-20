@@ -20,9 +20,15 @@
                                 <ul class="authors">
                                     {{#foreach authors}}
                                         <li>
-                                            <a href="{{url}}" data-toggle="tooltip" data-placement="top" title="{{name}}">
-                                                <img src="{{img_url profile_image}}" alt="{{name}}" />
-                                            </a>
+                                            {{#if profile_image}}
+                                                <a href="{{url}}" data-toggle="tooltip" data-placement="top" title="{{name}}">
+                                                    <img src="{{img_url profile_image}}" alt="{{name}}" />
+                                                </a>
+                                            {{else}}
+                                                <a href="{{url}}">
+                                                    {{name}} 
+                                                </a>
+                                            {{/if}}
                                         </li>
                                     {{/foreach}}
                                 </ul>
