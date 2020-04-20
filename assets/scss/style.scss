@@ -28,12 +28,21 @@ $ibm-plex-sans-medium: 500;
 $ibm-plex-sans-semi-bold: 600;
 $ibm-plex-sans-bold: 700;
 
+body{
+    transition: background .3s ease;
+}
+
+h1, h2, h3, h4, h5, h6{
+    transition: background .3s ease;
+}
+
 time{
     font-family: $ibm-plex-mono;
     line-height: 18px;
     font-size: 14px;
     letter-spacing: -0.186667px;
     color: rgba($light-grey, .8);
+    transition: all .3s ease;
 }
 
 figcaption{
@@ -83,6 +92,7 @@ blockquote{
     position: relative;
     z-index: 5;
     color: rgba($light-grey, .8);
+    transition: all .3s ease;
     a{
         margin-right: 20px;
         font-family: $ibm-plex-mono;
@@ -98,6 +108,10 @@ blockquote{
     }
 }
 
+#main{
+    position: relative;
+}
+
 .sub-header{
     border-top: 1px solid $lighter-grey;
     border-bottom: 1px solid $lighter-grey;
@@ -105,6 +119,7 @@ blockquote{
     font-family: $manrope;
     display: flex;
     justify-content: space-between;
+    transition: all .3s ease;
     .contribute{
         display: flex;
         align-items: center;
@@ -158,6 +173,7 @@ blockquote{
         background-repeat: no-repeat;
         width: 130px;
         height: 100%;
+        transition: background .3s ease;
         &::-webkit-input-placeholder {
             color: rgba($black, .6);
         }
@@ -574,6 +590,7 @@ blockquote{
                 padding: 2px;
                 background: $white;
                 border-radius: 50%;
+                transition: all .3s ease;
             }
         }
     }
@@ -615,6 +632,269 @@ blockquote{
         .post{
             &:nth-last-child(-n+2){
                 display: none;
+            }
+        }
+    }
+}
+
+.dm{
+    display: none;
+}
+
+.dark-mode-toggle{
+    position: absolute;
+    top: 0px;
+    right: 40px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: -60px;
+    a{
+        width: 100%;
+        height: 24px;
+        display: block;
+        border-radius: 50px;
+        position: relative;
+        background: $lighter-grey;
+        &:before{
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 2px;
+            top: 2px;
+            background: $black;
+            border-radius: 50%;
+            transition: all .3s ease;
+        }
+    }
+}
+
+.dark-mode{
+    background: #141414;
+    color: #838C91;
+    .dark-mode-toggle{
+        a{
+            background: #23252F;
+            &:before{
+                left: 100%;
+                transform: translateX(calc(-100% - 2px));
+            }
+        }
+    }
+    .p-large{
+        color: rgba($white,.8);
+    }
+    h1, h2, h3, h4, h5, h6{
+        color: $white;
+    }
+    .link-arrow{
+        &:after{
+            background-image: url(../img/icon-arrow-right-purple-dm.svg);
+        }
+    }
+    .btn-arrow{
+        &:after{
+            background-image: url(../img/icon-arrow-right-dm.svg);
+        }
+        &:hover{
+            &:after{
+                background-image: url(../img/icon-arrow-right-dm.svg);
+            }
+        }
+    }
+    #search-form{
+        #search-input{
+            color: $white;
+            background-image: url('../img/search-dm.svg');
+            &::-webkit-input-placeholder {
+                color: rgba($white, .6);
+            }
+            &:-ms-input-placeholder {
+                color: rgba($white, .6);
+            }
+            &::placeholder {
+                color: rgba($white, .6);
+            }
+        }
+        #search-results{
+            background: #252528;
+            a{
+                border-color: #141414;
+                color: $white;
+                &:hover{
+                    color: $purple;
+                }
+            }
+        }
+    }
+    header{
+        .dm{
+            display: block;
+            & + .logo{
+                display: none;
+            }
+        }
+        nav{
+            ul{
+                li{
+                    &.active{
+                        a{
+                            color: $purple;
+                        }
+                    }
+                    &.has-submenu{
+                        .submenu{
+                            background: #141414;
+                            &:before{
+                                box-shadow: 0 2px 14px rgba($black,.3);
+                            }
+                            &:after{
+                                background: #141414;
+                                border-color: #252528;
+                            }
+                            ul{
+                                li{
+                                    a{
+                                        color: rgba($white,.8);
+                                        &:after{
+                                            background-image: url(../img/icon-arrow-right-dm.svg);
+                                        }
+                                    }
+                                }
+                            }
+                            .social-links{
+                                li{
+                                    a{
+                                        svg{
+                                            path{
+                                                fill: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    a{
+                        color: $white;
+                        .arrow{
+                            background-image: url(../img/icon-arrow-down-dm.svg);
+                        }
+                    }
+                }
+            }
+        }
+        .mobile-nav-trigger{
+            svg{
+                rect{
+                    fill: $white;
+                }
+            }
+        }
+        .mobile-nav{
+            background: darken(#141414, 4%);
+            .mobile-nav-header{
+                .mobile-nav-trigger-close{
+                    svg{
+                        rect{
+                            fill: $white;
+                        }
+                    }
+                }
+            }
+            nav{
+                ul{
+                    li{
+                        a{
+                            border-color: #252528;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sub-header{
+        border-color: #252528;
+        nav{
+            ul{
+                li{
+                    a{
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    .authors{
+        li{
+            a{
+                img{
+                    background: #141414;
+                }
+            }
+        }
+    }
+    time{
+        color: rgba($white, 0.8);
+    }
+    .tags{
+        color: rgba($white, 0.8);
+    }
+    .share{
+        span{
+            color: rgba($white, 0.8);
+        }
+    }
+    .post-content{
+        .editor-content{
+            p{
+                color: #838C91;
+            }
+            ul, ol{
+                li{
+                    color: #838C91;
+                }
+            }
+        }
+    }
+    .share{
+        ul{
+            a{
+                &:hover{
+                    border: 1px solid $white;
+                    svg{
+                        path{
+                            fill: $white;
+                        }
+                    }
+                }
+                svg{
+                    path{
+                        fill: #838C91;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    blockquote{
+        color: rgba($white, 0.8);
+        &:before{
+            background-image: url(../img/quotes-dm.svg);
+        }
+    }
+    .related-posts{
+        background: #23252F;
+    }
+    .loop{
+        .post{
+            background: #141414;
+            .inner{
+                h2{
+                    a{
+                        color: $white;
+                    }
+                }
             }
         }
     }
@@ -668,6 +948,9 @@ blockquote{
     }
     iframe[src*="https://www.youtube.com/"] {
         height: calc(690px / 1.77777778) !important;
+    }
+    .dark-mode-toggle{
+        display: none;
     }
 }
 

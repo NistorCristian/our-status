@@ -127,6 +127,9 @@ $(document).ready(function ($) {
         $(".share").stick_in_parent({
             offset_top: 30
         });
+        $(".dark-mode-toggle").stick_in_parent({
+            offset_top: 91
+        });
         checkIfSticky = 1;
     }
 
@@ -155,5 +158,10 @@ $(document).ready(function ($) {
             container.attr('style', 'flex: ' + ratio + ' 1 0%');
         });
     }
+
+    $('.dark-mode-toggle a').on('click', function(event) {
+        event.preventDefault();
+        $('body').toggleClass('dark-mode');
+    });
 
 });

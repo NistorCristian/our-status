@@ -3,6 +3,12 @@
 {{#post}}
 
 <main id="main" role="main">
+    {{#has tag="#dark-mode"}}
+        <div class="dark-mode-toggle">
+            Dark mode
+            <a href="#"></a>
+        </div>
+    {{/has}}
     <article class="{{post_class}}">
         <div class="post-intro">
             <div class="container">
