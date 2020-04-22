@@ -458,14 +458,15 @@ blockquote {
   right: 40px;
   text-transform: uppercase;
   font-size: 12px;
-  margin-top: -60px; }
+  margin-top: -60px;
+  color: #23252F; }
   .dark-mode-toggle a {
     width: 100%;
     height: 24px;
     display: block;
     border-radius: 50px;
     position: relative;
-    background: #EAECEF; }
+    background: #a7a9ad; }
     .dark-mode-toggle a:before {
       content: '';
       position: absolute;
@@ -478,13 +479,14 @@ blockquote {
       transition: all .3s ease; }
 
 .dark-mode {
-  background: #141414;
-  color: #838C91; }
-  .dark-mode .dark-mode-toggle a {
-    background: #23252F; }
-    .dark-mode .dark-mode-toggle a:before {
-      left: 100%;
-      transform: translateX(calc(-100% - 2px)); }
+  background: #141414; }
+  .dark-mode .dark-mode-toggle {
+    color: #ffffff; }
+    .dark-mode .dark-mode-toggle a {
+      background: #EAECEF; }
+      .dark-mode .dark-mode-toggle a:before {
+        left: 100%;
+        transform: translateX(calc(-100% - 2px)); }
   .dark-mode .p-large {
     color: rgba(255, 255, 255, 0.8); }
   .dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
