@@ -137,11 +137,15 @@ $(document).ready(function ($) {
         w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         if (w < 992) {
             $(".share").trigger("sticky_kit:detach");
+            $(".dark-mode-toggle").trigger("sticky_kit:detach");
             checkIfSticky = 0;
         }else{
             if (checkIfSticky == 0) {
                 $(".share").stick_in_parent({
                     offset_top: 30
+                });
+                $(".dark-mode-toggle").stick_in_parent({
+                    offset_top: 91
                 });
                 checkIfSticky++;
             }
